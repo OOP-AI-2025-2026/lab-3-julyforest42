@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Cart {
 
-    public Item[] contents;
-    int index;
+    private Item[] contents;
+    private int index;
 
-    Cart(Item[] _contents) {
-        this.contents = _contents;
+    public Cart(Item[] contents) {
+        this.contents = contents;
     }
 
     public void removeById(int itemIndex) {
@@ -40,7 +40,7 @@ public class Cart {
 
     public int findItemInArray(Item item) {
         for (int i = 0; i < index; i++) {
-            if (contents[i].id == item.id) {
+            if (contents[i].getId() == item.getId()) {
                 return i;
             }
         }
@@ -48,7 +48,7 @@ public class Cart {
         return -1;
     }
 
-    void add(Item item) {
+    public void add(Item item) {
         if (isCartFull())
             return;
 
@@ -65,5 +65,13 @@ public class Cart {
         return "Cart{" +
                 "contents=" + Arrays.toString(contents) +
                 '}' + "\n";
+    }
+
+    public Item getContent(int index) {
+        return contents[index];
+    }
+
+    public int getIndex() {
+        return index;
     }
 }

@@ -2,6 +2,11 @@ package org.example.task2;
 
 public class Main {
     public static void main(String[] args) {
+        Box box = new Box(10, 15, 20);
+
+        System.out.println("Volume: " + box.getVolume());
+        System.out.println("Lateral Surface Area: " + box.getLateralSurfaceArea());
+        System.out.println("Surface Area: " + box.getSurfaceArea());
 
         Cart cart = new Cart(new Item[10]);
         cart.add(new Item(1, "Samsung Galaxy S23", 27999));
